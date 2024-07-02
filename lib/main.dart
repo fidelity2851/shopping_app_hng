@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app_hng/screens/product_screen.dart';
+import 'package:shopping_app_hng/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +15,13 @@ class MyApp extends StatelessWidget {
       title: 'Shopping App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         useMaterial3: true,
       ),
-      home: const ProductScreen(),
+      home: const HomeScreen(),
     );
   }
 }
+
+
+
