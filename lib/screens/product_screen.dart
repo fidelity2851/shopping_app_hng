@@ -79,9 +79,19 @@ class _ProductScreenState extends State<ProductScreen> {
                         onPressed: () {
                           print('Add');
                         },
-                        style: const ButtonStyle(
+                        style: ButtonStyle(
+                          padding: const MaterialStatePropertyAll(
+                              EdgeInsets.symmetric(
+                            vertical: 10.0,
+                            horizontal: 15.0,
+                          )),
                           backgroundColor:
-                              MaterialStatePropertyAll(Colors.amber),
+                              const MaterialStatePropertyAll(Color(0xFFC09000)),
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
                         ),
                         child: const Text(
                           'Add to cart',
@@ -101,14 +111,21 @@ class _ProductScreenState extends State<ProductScreen> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.amber,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        iconSize: 30.0,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Products',
+            icon: Icon(
+              Icons.dashboard,
+            ),
+            label: 'PRODUCTS',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket),
-            label: 'CheckOut',
+            icon: Icon(
+              Icons.shopping_basket,
+            ),
+            label: 'CHECKOUT',
           ),
         ],
       ),
