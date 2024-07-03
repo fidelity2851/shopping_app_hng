@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:shopping_app_hng/screens/order_success_screen.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -54,53 +55,55 @@ class CheckoutScreen extends StatelessWidget {
                           const SizedBox(
                             width: 15.0,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '${checkoutList[index]['name']}',
-                                style: const TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${checkoutList[index]['name']}',
+                                  style: const TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                '\$${checkoutList[index]['price']}',
-                                style: const TextStyle(
-                                  color: Colors.amber,
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.bold,
+                                Text(
+                                  '\$${checkoutList[index]['price']}',
+                                  style: const TextStyle(
+                                    color: Colors.amber,
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {
-                                  removeFromCheckout(checkoutList[index]);
-                                },
-                                style: ButtonStyle(
-                                  padding: const MaterialStatePropertyAll(
-                                      EdgeInsets.symmetric(
-                                    vertical: 10.0,
-                                    horizontal: 15.0,
-                                  )),
-                                  backgroundColor:
-                                      const MaterialStatePropertyAll(
-                                          Color.fromARGB(255, 192, 38, 0)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    removeFromCheckout(checkoutList[index]);
+                                  },
+                                  style: ButtonStyle(
+                                    padding: const MaterialStatePropertyAll(
+                                        EdgeInsets.symmetric(
+                                      vertical: 10.0,
+                                      horizontal: 15.0,
+                                    )),
+                                    backgroundColor:
+                                        const MaterialStatePropertyAll(
+                                            Color.fromARGB(255, 192, 38, 0)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Remove',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ),
-                                child: const Text(
-                                  'Remove',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           )
                         ],
                       ),

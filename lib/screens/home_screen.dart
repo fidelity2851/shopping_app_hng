@@ -36,6 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
       'price': 299,
       'image': 'https://m.media-amazon.com/images/I/61-PblYntsL._AC_SX679_.jpg'
     },
+    {
+      'name': 'Xiaomi Redmi Note 13 PRO 5G + 4G LTE (256GB + 8GB)',
+      'price': 289,
+      'image': 'https://m.media-amazon.com/images/I/41GK+ItincL._AC_SX679_.jpg'
+    },
   ];
 
 // Checkout List

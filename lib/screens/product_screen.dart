@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ProductScreen extends StatelessWidget {
   final List<Map<String, dynamic>> productList;
@@ -51,80 +52,82 @@ class ProductScreen extends StatelessWidget {
                     const SizedBox(
                       width: 15.0,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          productList[index]['name'],
-                          style: const TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            productList[index]['name'],
+                            style: const TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Text(
-                          '\$${productList[index]['price']}',
-                          style: const TextStyle(
-                            color: Colors.amber,
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.bold,
+                          Text(
+                            '\$${productList[index]['price']}',
+                            style: const TextStyle(
+                              color: Colors.amber,
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        checkoutList.contains(productList[index])
-                            ? ElevatedButton(
-                                onPressed: () {},
-                                style: ButtonStyle(
-                                  padding: const MaterialStatePropertyAll(
-                                      EdgeInsets.symmetric(
-                                    vertical: 10.0,
-                                    horizontal: 15.0,
-                                  )),
-                                  backgroundColor:
-                                      const MaterialStatePropertyAll(
-                                          Color(0xFF2A2927)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                          checkoutList.contains(productList[index])
+                              ? ElevatedButton(
+                                  onPressed: () {},
+                                  style: ButtonStyle(
+                                    padding: const MaterialStatePropertyAll(
+                                        EdgeInsets.symmetric(
+                                      vertical: 10.0,
+                                      horizontal: 15.0,
+                                    )),
+                                    backgroundColor:
+                                        const MaterialStatePropertyAll(
+                                            Color(0xFF2A2927)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Added',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                )
+                              : ElevatedButton(
+                                  onPressed: () {
+                                    addToCheckout(productList[index]);
+                                  },
+                                  style: ButtonStyle(
+                                    padding: const MaterialStatePropertyAll(
+                                        EdgeInsets.symmetric(
+                                      vertical: 10.0,
+                                      horizontal: 15.0,
+                                    )),
+                                    backgroundColor:
+                                        const MaterialStatePropertyAll(
+                                            Color(0xFFC09000)),
+                                    shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Add to cart',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ),
-                                child: const Text(
-                                  'Added',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              )
-                            : ElevatedButton(
-                                onPressed: () {
-                                  addToCheckout(productList[index]);
-                                },
-                                style: ButtonStyle(
-                                  padding: const MaterialStatePropertyAll(
-                                      EdgeInsets.symmetric(
-                                    vertical: 10.0,
-                                    horizontal: 15.0,
-                                  )),
-                                  backgroundColor:
-                                      const MaterialStatePropertyAll(
-                                          Color(0xFFC09000)),
-                                  shape: MaterialStatePropertyAll(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                  ),
-                                ),
-                                child: const Text(
-                                  'Add to cart',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                      ],
+                        ],
+                      ),
                     )
                   ],
                 ),
