@@ -3,13 +3,15 @@
 A simple shopping app built with Flutter.
 
 ## Features
+
 - View a list of products
 - Add products to checkout
 - Remove products from checkout
 - Navigate to an Order Successful screen
 
 ## Setup Instructions
+
 1. Clone the repository:
-   git clone <repository-url>
+   git clone <https://github.com/fidelity2851/shopping_app_hng.git>
    cd shopping_app
    flutter run
