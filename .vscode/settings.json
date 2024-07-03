@@ -3,5 +3,6 @@
         "activityBar.background": "#053428",
         "titleBar.activeBackground": "#074939",
         "titleBar.activeForeground": "#F0FEFA"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

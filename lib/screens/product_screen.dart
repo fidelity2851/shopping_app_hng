@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
-
-  @override
-  State<ProductScreen> createState() => _ProductScreenState();
-}
-
-class _ProductScreenState extends State<ProductScreen> {
-  final List productList = [1, 1, 1, 1, 1, 1, 1, 1];
+class ProductScreen extends StatelessWidget {
+  final List<Map<String, dynamic>> productList;
+  final List<Map<String, dynamic>> checkoutList;
+  final Function addToCheckout;
+  const ProductScreen({
+    super.key,
+    required this.productList,
+    required this.checkoutList,
+    required this.addToCheckout,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +43,8 @@ class _ProductScreenState extends State<ProductScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Image(
-                      image: NetworkImage('https://placehold.jp/150x150.png'),
+                    Image(
+                      image: NetworkImage('${productList[index]['image']}'),
                       width: 100.0,
                       height: 100.0,
                     ),
@@ -53,48 +54,76 @@ class _ProductScreenState extends State<ProductScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Product 1',
-                          style: TextStyle(
+                        Text(
+                          productList[index]['name'],
+                          style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const Text(
-                          '\$100',
-                          style: TextStyle(
+                        Text(
+                          '\$${productList[index]['price']}',
+                          style: const TextStyle(
                             color: Colors.amber,
                             fontSize: 25.0,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            print('Add');
-                          },
-                          style: ButtonStyle(
-                            padding: const MaterialStatePropertyAll(
-                                EdgeInsets.symmetric(
-                              vertical: 10.0,
-                              horizontal: 15.0,
-                            )),
-                            backgroundColor: const MaterialStatePropertyAll(
-                                Color(0xFFC09000)),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                        checkoutList.contains(productList[index])
+                            ? ElevatedButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  padding: const MaterialStatePropertyAll(
+                                      EdgeInsets.symmetric(
+                                    vertical: 10.0,
+                                    horizontal: 15.0,
+                                  )),
+                                  backgroundColor:
+                                      const MaterialStatePropertyAll(
+                                          Color(0xFF2A2927)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                child: const Text(
+                                  'Added',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              )
+                            : ElevatedButton(
+                                onPressed: () {
+                                  addToCheckout(productList[index]);
+                                },
+                                style: ButtonStyle(
+                                  padding: const MaterialStatePropertyAll(
+                                      EdgeInsets.symmetric(
+                                    vertical: 10.0,
+                                    horizontal: 15.0,
+                                  )),
+                                  backgroundColor:
+                                      const MaterialStatePropertyAll(
+                                          Color(0xFFC09000)),
+                                  shape: MaterialStatePropertyAll(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                child: const Text(
+                                  'Add to cart',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          child: const Text(
-                            'Add to cart',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
                       ],
                     )
                   ],
