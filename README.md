@@ -1,16 +1,15 @@
-# shopping_app_hng
+# Simple Shopping App
 
-A new Flutter project.
+A simple shopping app built with Flutter.
 
-## Getting Started
+## Features
+- View a list of products
+- Add products to checkout
+- Remove products from checkout
+- Navigate to an Order Successful screen
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup Instructions
+1. Clone the repository:
+   git clone <repository-url>
+   cd shopping_app
+   flutter run
