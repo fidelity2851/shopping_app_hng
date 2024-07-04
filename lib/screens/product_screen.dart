@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ProductScreen extends StatelessWidget {
   final List<Map<String, dynamic>> productList;

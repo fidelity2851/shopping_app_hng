@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shopping_app_hng/screens/order_success_screen.dart';
 
 class CheckoutScreen extends StatelessWidget {
