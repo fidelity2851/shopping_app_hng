@@ -18,28 +18,27 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'name': 'Apple AirPods Pro',
       'price': 249,
-      'image': 'https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SX679_.jpg'
+      'image': 'assets/product1.jpg',
     },
     {
       'name': 'Samsung Galaxy S21 Ultra',
       'price': 1199,
-      'image':
-          'https://m.media-amazon.com/images/I/71hmici6DyL.__AC_SX300_SY300_QL70_FMwebp_.jpg'
+      'image': 'assets/product2.jpg',
     },
     {
       'name': 'Sony WH-1000XM4',
       'price': 348,
-      'image': 'https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SX679_.jpg'
+      'image': 'assets/product3.jpg',
     },
     {
       'name': 'Nintendo Switch',
       'price': 299,
-      'image': 'https://m.media-amazon.com/images/I/61-PblYntsL._AC_SX679_.jpg'
+      'image': 'assets/product4.jpg',
     },
     {
       'name': 'Xiaomi Redmi Note 13 PRO 5G + 4G LTE (256GB + 8GB)',
       'price': 289,
-      'image': 'https://m.media-amazon.com/images/I/41GK+ItincL._AC_SX679_.jpg'
+      'image': 'assets/product5.jpg',
     },
   ];
 

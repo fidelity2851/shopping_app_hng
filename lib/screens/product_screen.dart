@@ -44,7 +44,7 @@ class ProductScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Image(
-                      image: NetworkImage('${productList[index]['image']}'),
+                      image: AssetImage('${productList[index]['image']}'),
                       width: 100.0,
                       height: 100.0,
                     ),

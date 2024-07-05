@@ -47,7 +47,7 @@ class CheckoutScreen extends StatelessWidget {
                         children: [
                           Image(
                             image:
-                                NetworkImage('${checkoutList[index]['image']}'),
+                                AssetImage('${checkoutList[index]['image']}'),
                             width: 100.0,
                             height: 100.0,
                           ),
